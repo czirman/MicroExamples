@@ -1,0 +1,3 @@
+//https://stackify.com/memory-leaks-java/
+1. Intern nie powoduje już memoryleak odkąd w java 8 pamieć PermGen został zastąpiony Metaspace
+2. Ustaw  parametr -Xmx16M

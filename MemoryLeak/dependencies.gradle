@@ -1,0 +1,9 @@
+ext {
+    jupiter_version = '5.7.0'
+    jupiter_mockito_version = '3.6.28'
+}
+
+dependencies {
+    testCompile "org.junit.jupiter:junit-jupiter-engine:${jupiter_version}"
+    testCompile "org.mockito:mockito-junit-jupiter:${jupiter_mockito_version}"
+}
