@@ -4,7 +4,7 @@ plugins {
 
 apply from: 'dependencies.gradle'
 
-group 'org.czirman.memoryleak'
+group 'org.czirman.microexamples'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
