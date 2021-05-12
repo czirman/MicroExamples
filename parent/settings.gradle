@@ -1,4 +1,5 @@
 rootProject.name = 'parent'
 include 'memory-leak'
 include 'big-decimal'
+include 'immutable'
 
