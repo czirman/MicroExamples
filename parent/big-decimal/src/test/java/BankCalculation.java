@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 public class BankCalculation {
 
-
     @Test
     public void using_float() {
         double priceWithoutVat = 9.99;
