@@ -4,4 +4,5 @@ include 'big-decimal'
 include 'immutable'
 include 'Zakleszczenie'
 include 'pattern'
+include 'pattern'
 

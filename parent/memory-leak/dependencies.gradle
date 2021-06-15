@@ -1,4 +1,5 @@
 dependencies {
-    testCompile libraries.jupiter
-    testCompile libraries.jupiter_mockito
+    testRuntimeOnly libraries.jupiter
+    testImplementation libraries.jupiter_mockito
+    testImplementation libraries.jupiter_api
 }

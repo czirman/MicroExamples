@@ -1,6 +1,6 @@
 package decorators.mydecorator.notifier;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class MyDecoratorClient {
 
