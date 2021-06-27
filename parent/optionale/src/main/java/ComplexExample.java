@@ -3,7 +3,6 @@ import model.Holding;
 import model.User;
 
 import java.util.Optional;
-import java.util.Vector;
 
 public class ComplexExample {
 
