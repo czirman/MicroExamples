@@ -1,0 +1,20 @@
+https://www.javappa.com/kurs-spring/wstrzykiwanie-zaleznosci
+https://nofluffjobs.com/blog/dependency-injection-w-springu/
+
+1. Adotacja bean a component
+@Component są używane do automatycznego wykrywania i automatycznej konfiguracji komponentów
+bean za pomocą skanowania ścieżki klas.
+@Bean służy do jawnego zadeklarowania pojedynczej fasoli, zamiast pozwalać Springowi robić to automatycznie
+
+2. W pakiecie skanowanym nie trzeba dodawać adnotacji autowired, robi sie to poza
+patrz konstruktor StateBean.
+
+3. Jak zadeklarujesz fasole adnotacja bean to we wstrzykiwanym konstruktorze kontener sam się zorientuje ze to bean
+
+4. Bean możemy stosować jak chcemy zrobić z zewnętrznej klasy bean, nie ma możliwości dodania tam adnotacji component
+
+5 W springuBooce jak nie użyjesz skanowania, on chyba skanuje cała aplikacje i znajduje fasolki z adnotacja component
+
+6. How many bean. Nazwametody, name determinuja. Jak zduplikujesz name dla dwóch metod to stworzy jednego beana
+
+
