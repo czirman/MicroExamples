@@ -9,4 +9,9 @@ public class AppConfig {
         return new Store();
     }
 
+    @Bean()
+    public Store store1() {
+        return new Store();
+    }
+
 }

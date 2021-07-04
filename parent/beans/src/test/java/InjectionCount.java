@@ -9,4 +9,6 @@ public class InjectionCount {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         context.getBeanDefinitionNames();
     }
+
+
 }
