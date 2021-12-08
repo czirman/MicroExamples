@@ -1,0 +1,17 @@
+ext {
+    spring_version = "5.3.8"
+    spring_test_version = "2.5.2"
+}
+
+
+dependencies {
+    testRuntimeOnly libraries.jupiter
+    testImplementation libraries.jupiter_mockito
+    testImplementation libraries.jupiter_api
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${spring_test_version}"
+    implementation "org.springframework:spring-context:${spring_version}"
+
+}
+
+

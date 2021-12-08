@@ -6,4 +6,6 @@ include 'Zakleszczenie'
 include 'pattern'
 include 'pattern'
 include 'optionale'
+include 'beans'
+include 'sort'
 
