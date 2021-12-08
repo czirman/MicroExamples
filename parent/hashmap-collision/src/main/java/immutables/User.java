@@ -1,6 +1,6 @@
 package immutables;
 
-public class User {
+public class User implements Comparable<User>{
     private String login;
     public User(String login) {
         this.login = login;
@@ -16,5 +16,10 @@ public class User {
     }
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 0;
     }
 }
