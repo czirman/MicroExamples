@@ -1,11 +1,13 @@
 ext {
     jupiter_version = '5.7.0'
     jupiter_mockito_version = '3.6.28'
+    mockito_core = '4.1.0'
 }
 
 ext.libraries = [
                   jupiter: "org.junit.jupiter:junit-jupiter-engine:${jupiter_version}",
                   jupiter_mockito: "org.mockito:mockito-junit-jupiter:${jupiter_mockito_version}",
-                  jupiter_api: "org.junit.jupiter:junit-jupiter-api:${jupiter_version}"
+                  jupiter_api: "org.junit.jupiter:junit-jupiter-api:${jupiter_version}",
+                  mockito_core: "org.mockito:mockito-core:${mockito_core}"
 ]
 
