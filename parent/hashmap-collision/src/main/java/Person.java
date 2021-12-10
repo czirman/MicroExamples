@@ -21,7 +21,7 @@ public class Person {
     public int hashCode() {
         if (pesel > 0 && pesel <= 10)
             return 1;
-        else if (pesel > 10 && pesel <= 20)
+        else if (pesel >10 && pesel<=20)
             return 2;
         else
             return 0;
