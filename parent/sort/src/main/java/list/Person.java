@@ -1,3 +1,5 @@
+package list;
+
 public class Person implements Comparable{
 
     String surname;
@@ -19,7 +21,7 @@ public class Person implements Comparable{
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "list.Person{" +
                 "surname='" + surname + '\'' +
                 ", name='" + name + '\'' +
                 '}';
