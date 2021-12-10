@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+apply from: 'dependencies.gradle'
+
+dependencies {
+    implementation 'junit:junit:4.13.1'
+}
+
+group 'org.czirman.microexamples'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
