@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,21 +26,18 @@ public class ProductTest {
 
     @Test
     public void example_from_site_second() {
-        HashSet<Product> set = new HashSet<>();
-        set.add(new Product("mleko", 2.8));
-        set.add(new Product("mleko", 3.2));
+        Set<Product> set = new HashSet<>();
+
+        Product product1 = new Product("mleko", 2.8);
+        Product product2 = new Product("mleko", 3.4);
+
+        set.add(product1);
+        set.add(product2); // produkt1 i produkt2 sa równa. Nie powinno dodawac
+
+        product1.equals(product2);
 
         System.out.println(set);
+
     }
 }
-//https://nullpointerexception.pl/pytania-rekrutacyjne-jak-dziala-hashmapa-w-javie/
-//https://cupofcodes.pl/co-powinienes-wiedziec-o-hash-map/
-//https://javastart.pl/baza-wiedzy/programowanie-obiektowe/metoda-hashcode
 
-/*
-Rozkładanie równomierne było błędnym myśleniem
-Kolizję mamy wtedy gdy dwa obiekty mają ten sam hashcode
-
-Unikalność- to jest zupełnie co innego
-
- */

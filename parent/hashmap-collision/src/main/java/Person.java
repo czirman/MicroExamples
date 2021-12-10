@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Person {
     private Integer pesel;
     private String name;
@@ -11,14 +9,6 @@ public class Person {
         this.surnameName = surnameName;
     }
 
- /*   @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(name, person.name) && Objects.equals(surnameName, person.surnameName);
-    }*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,9 +19,9 @@ public class Person {
 
     @Override
     public int hashCode() {
-        if (pesel >0 && pesel<=10)
+        if (pesel > 0 && pesel <= 10)
             return 1;
-        else if (pesel >10 && pesel<=20)
+        else if (pesel > 10 && pesel <= 20)
             return 2;
         else
             return 0;
