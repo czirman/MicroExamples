@@ -1,0 +1,3 @@
+//https://nullpointerexception.pl/pytania-rekrutacyjne-jak-dziala-hashmapa-w-javie/
+//https://cupofcodes.pl/co-powinienes-wiedziec-o-hash-map/
+//https://javastart.pl/baza-wiedzy/programowanie-obiektowe/metoda-hashcode
