@@ -1,3 +1,6 @@
+package list;
+
+import list.Person;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

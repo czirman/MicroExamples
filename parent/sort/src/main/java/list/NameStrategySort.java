@@ -1,3 +1,5 @@
+package list;
+
 import java.util.Comparator;
 
 public class NameStrategySort implements Comparator<Person> {
