@@ -7,6 +7,7 @@ public class Time {
 
     private static Clock CLOCK = Clock.systemDefaultZone();
     private static final TimeZone REAL_TIME_ZONE = TimeZone.getDefault();
+
     public static LocalDate currentDate() {
         return LocalDate.now(getClock());
     }

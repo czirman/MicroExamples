@@ -4,18 +4,17 @@ import java.time.*;
 
 public class MyTimeFunctionality {
 
-    public Boolean isShopOpen(){
+    public Boolean isShopOpen() {
         Instant timeNow = Instant.now();
         int hour = timeNow.atZone(ZoneOffset.UTC).getHour();
-        if (hour>8 && hour<16) {
+        if (hour > 8 && hour < 16) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
-    public void listOfMethod(){
+    public void listOfMethod() {
         LocalDate.now();
         LocalTime.now();
         LocalDateTime.now();

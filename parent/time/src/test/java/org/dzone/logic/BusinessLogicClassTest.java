@@ -16,6 +16,6 @@ class BusinessLogicClassTest {
         String lastUpdatedTime = businessLogicClass.getLastUpdatedTime();
 
         //THEN
-        assertEquals("Last Updated At 2020-04-01T12:45",lastUpdatedTime);
+        assertEquals("Last Updated At 2020-04-01T12:45", lastUpdatedTime);
     }
 }
