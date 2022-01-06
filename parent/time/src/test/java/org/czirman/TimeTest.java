@@ -1,19 +1,20 @@
 package org.czirman;
 
+import org.czirman.utils.TimeUtils;
 import org.junit.jupiter.api.Test;
 
-import java.time.Clock;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-//@ExtendWith(MockTimeExtension.class)
 public class TimeTest {
 
     private final MyTimeFunctionality timeFunctionality = new MyTimeFunctionality();
+
+    private final static LocalDateTime HOUR_BEFOFE_16 = LocalDateTime.of(2020, Month.APRIL, 1, 12, 45);
+    private final static LocalDateTime HOUR_AFTER_16 = LocalDateTime.of(2020, Month.APRIL, 1, 18, 45);
+    private final static ZoneId ZONE_ID = ZoneId.of("Europe/Kiev");
 
     @Test
     public void test() {
@@ -22,20 +23,18 @@ public class TimeTest {
         timeFunctionality.isShopOpen();
     }
 
-    //@Test
+    @Test
     public void givenTime8To16_whenKnock_thenShopOpen() {
+
+        TimeUtils.useMockTime(HOUR_BEFOFE_16, ZONE_ID);
         Boolean open = timeFunctionality.isShopOpen();
-
-        String instantExpected = "2014-12-22T10:15:30Z";
-        Clock clock = Clock.fixed(Instant.parse(instantExpected), ZoneId.of("UTC"));
-
-        Instant instant = Instant.now(clock);
 
         assertTrue(open);
     }
 
-    //@Test
+    @Test
     public void givenTimeAfter16_whenKnock_thenShopClosed() {
+        TimeUtils.useMockTime(HOUR_AFTER_16, ZONE_ID);
         Boolean open = timeFunctionality.isShopOpen();
         assertFalse(open);
     }

@@ -1,11 +1,13 @@
 package org.czirman;
 
+import org.czirman.utils.TimeUtils;
+
 import java.time.*;
 
 public class MyTimeFunctionality {
 
     public Boolean isShopOpen() {
-        Instant timeNow = Instant.now();
+        LocalDateTime timeNow = TimeUtils.currentDateTime();
         int hour = timeNow.atZone(ZoneOffset.UTC).getHour();
         if (hour > 8 && hour < 16) {
             return true;
