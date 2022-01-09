@@ -1,0 +1,8 @@
+dependencies {
+    testRuntimeOnly libraries.jupiter
+    testImplementation libraries.jupiter_mockito
+    testImplementation libraries.jupiter_api
+
+    testImplementation group: 'com.tngtech.archunit', name: 'archunit-junit5', version: '0.22.0'
+}
+
