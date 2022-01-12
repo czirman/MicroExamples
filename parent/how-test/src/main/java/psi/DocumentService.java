@@ -29,6 +29,7 @@ public class DocumentService {
         Instant deadlineDate = document.getDeadline();
         return deadlineDate.isBefore(Instant.now());
     }
+
 }
 
 

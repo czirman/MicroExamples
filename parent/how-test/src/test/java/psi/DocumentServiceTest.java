@@ -7,8 +7,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.ZoneId;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
@@ -40,7 +43,7 @@ public class DocumentServiceTest {
     @Test
     public void when_customer_is_null_then_NPE() {
         //given
-        Document document = getDocument();
+        Document document = getDocument(Instant.now());
 
         //when then
         assertThrows(NullPointerException.class, () -> {
@@ -51,7 +54,7 @@ public class DocumentServiceTest {
     @Test
     public void when_prefer_emails_is_true() {
         //given
-        Document document = getDocument();
+        Document document = getDocument(Instant.now());
         Customer customer = getCustomer(true);
 
         //when
@@ -66,7 +69,7 @@ public class DocumentServiceTest {
     @Test
     public void when_prefer_emails_is_false() {
         //given
-        Document document = getDocument();
+        Document document = getDocument(Instant.now());
         Customer customer = getCustomer(false);
         given(printerService.isPrinterAvailable()).willReturn(true);
 
@@ -83,7 +86,7 @@ public class DocumentServiceTest {
     @Test
     public void when_prefer_emails_and_printer_is_false() {
         //given
-        Document document = getDocument();
+        Document document = getDocument(Instant.now());
         Customer customer = getCustomer(false);
         given(printerService.isPrinterAvailable()).willReturn(false);
 
@@ -97,12 +100,44 @@ public class DocumentServiceTest {
 
     }
 
-    //TODO lombok
-    private static Document getDocument() {
-        return new Document("content", Instant.now());
+    @Test
+    public void when_isOver_deadline() {
+        //given
+        LocalDateTime deadLineTime = LocalDateTime.of(3000, Month.APRIL, 1, 12, 45);
+        ZoneId ZONE_ID = ZoneId.of("Europe/Kiev");
+        Instant instant = deadLineTime.atZone(ZONE_ID).toInstant();
+        Document document = getDocument(instant);
+
+        //when
+        Boolean overDeadline = documentService.isOverDeadline(document);
+
+        //then
+        assertFalse(overDeadline);
+
     }
 
-    private static Customer getCustomer(final Boolean preferedEmails) {
-        return new Customer("email", preferedEmails);
+    @Test
+    public void when_isBefore_deadline() {
+        //given
+        LocalDateTime deadLineTime = LocalDateTime.of(1000, Month.APRIL, 1, 12, 45);
+        ZoneId ZONE_ID = ZoneId.of("Europe/Kiev");
+        Instant instant = deadLineTime.atZone(ZONE_ID).toInstant();
+        Document document = getDocument(instant);
+
+        //when
+        Boolean overDeadline = documentService.isOverDeadline(document);
+
+        //then
+        assertTrue(overDeadline);
+
+    }
+
+    //TODO lombok
+    private static Document getDocument(Instant deadlineDate) {
+        return new Document("content", deadlineDate);
+    }
+
+    private static Customer getCustomer(final Boolean preferredEmails) {
+        return new Customer("email", preferredEmails);
     }
 }
