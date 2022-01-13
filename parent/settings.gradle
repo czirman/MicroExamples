@@ -11,4 +11,5 @@ include 'sort'
 include 'threads'
 include 'imitation'
 include 'time'
+include 'how-test'
 
