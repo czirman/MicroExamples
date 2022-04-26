@@ -1,3 +1,6 @@
+package org.czirman.runnable;
+
+import org.czirman.runnable.MyRunnableExceptionImpl;
 import org.junit.jupiter.api.Test;
 
 public class MyRunnableExceptionImplTest {

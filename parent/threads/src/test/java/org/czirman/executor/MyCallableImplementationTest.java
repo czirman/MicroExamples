@@ -1,3 +1,6 @@
+package org.czirman.executor;
+
+import org.czirman.executor.MyCallableImplementation;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
@@ -30,7 +33,7 @@ public class MyCallableImplementationTest {
             @Override
             public void run() {
                 for (int i = 0; i < 5; i++) {
-                    System.out.println(Thread.currentThread().getName() + " with Runnable: MyRunnableImplementation runs..." + i);
+                    System.out.println(Thread.currentThread().getName() + " with Runnable: org.czirman.runnable.MyRunnableImplementation runs..." + i);
                 }
             }
         });

@@ -1,3 +1,5 @@
+package org.czirman.runnable;
+
 public class MyRunnableExceptionImpl implements Runnable {
 
     @Override

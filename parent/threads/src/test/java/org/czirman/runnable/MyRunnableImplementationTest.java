@@ -1,3 +1,6 @@
+package org.czirman.runnable;
+
+import org.czirman.runnable.MyRunnableImplementation;
 import org.junit.jupiter.api.Test;
 
 public class MyRunnableImplementationTest {
@@ -21,7 +24,7 @@ public class MyRunnableImplementationTest {
             @Override
             public void run() {
                 for (int i = 0; i < 5; i++) {
-                    System.out.println(Thread.currentThread().getName() + " with Runnable: MyRunnableImplementation runs..." + i);
+                    System.out.println(Thread.currentThread().getName() + " with Runnable: org.czirman.runnable.MyRunnableImplementation runs..." + i);
                 }
             }
         });

@@ -1,3 +1,5 @@
+package org.czirman.executor;
+
 import java.util.concurrent.Callable;
 
 public class MyCallableExceptionImpl implements Callable<Integer> {
