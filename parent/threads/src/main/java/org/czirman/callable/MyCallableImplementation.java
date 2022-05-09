@@ -1,4 +1,4 @@
-package org.czirman.executor;
+package org.czirman.callable;
 
 import java.util.concurrent.Callable;
 

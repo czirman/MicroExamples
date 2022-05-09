@@ -1,6 +1,5 @@
-package org.czirman.executor;
+package org.czirman.callable;
 
-import org.czirman.executor.MyCallableImplementation;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
