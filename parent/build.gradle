@@ -7,8 +7,8 @@ apply from: 'dependencies.gradle'
 group 'org.czirman.microexamples'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_20
+targetCompatibility = JavaVersion.VERSION_20
 
 repositories {
     mavenCentral()
