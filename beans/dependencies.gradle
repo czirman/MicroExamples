@@ -1,6 +1,6 @@
 ext {
-    spring_version = "5.3.8"
-    spring_test_version = "2.5.2"
+    spring_version = "6.0.8"
+    spring_test_version = "3.0.6"
 }
 
 
