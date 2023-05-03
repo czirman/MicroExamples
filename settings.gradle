@@ -1,4 +1,4 @@
-rootProject.name = 'parent'
+rootProject.name = 'micro-examples'
 include 'memory-leak'
 include 'big-decimal'
 include 'immutable'
