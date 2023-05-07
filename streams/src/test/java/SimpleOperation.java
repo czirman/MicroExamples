@@ -15,23 +15,27 @@ public class SimpleOperation {
                 .sorted().collect(Collectors.toList());
     }
 
-    // TODO interfejs Function obadać a ten test usunac
-    @Test
-    public void test() {
-        Function ff = f -> f.toString();
-    }
-
     @Test
     // TODO wywala wyjatek zwiazany z jedna z waznych cech strumieni
     public void test1() {
 
         Stream<Klasa> stream = Arrays.asList(new Klasa(1), new Klasa(4), new Klasa(2), new Klasa(10), new Klasa(19)).stream();
-        Optional<Integer> b = stream.map(arg -> arg.getHup())
-                .filter(arg -> arg == 2)
-                .peek(arg -> arg = arg + 1)
-                .findFirst();
+        Stream<Object> b = stream.map(arg -> arg.getHup());//.collect(Collectors.toList());
+        b.collect(Collectors.toList());
 
-        stream.collect(Collectors.toList());
+        Stream<String> stringStream = Stream.of("A", "B", "C", "D");
+        Stream<String> result1 = stringStream.filter(arg -> arg.equals("A"));
+
+        result1.collect(Collectors.toList());
+        //result1.findFirst();
+
+    }
+
+    /* To ciekawy przypadek zamykania strumienia
+       okazuje się że operacja przypisania do innego strumienia też (poza operacjami kończącymi) zamyka strumieni (linia )
+
+     */
+    public void should_throw_exception_when_exception_closed_in_creation_phase(){
 
     }
 }

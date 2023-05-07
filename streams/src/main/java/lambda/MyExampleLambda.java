@@ -7,7 +7,8 @@ public class MyExampleLambda {
     public static void main(String[] args) {
 
         // NoReturnArgument
-        NoReturnArgument noReturnArgument = arg -> System.out.println("ddd");
+        final Integer ii =0;
+        NoReturnArgument noReturnArgument = arg -> arg.toString();
 
         // Lambda with more than one liner
         NoReturnArgument moreLine = arg -> {
