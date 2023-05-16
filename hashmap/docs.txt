@@ -1,3 +1,22 @@
-//https://nullpointerexception.pl/pytania-rekrutacyjne-jak-dziala-hashmapa-w-javie/
-//https://cupofcodes.pl/co-powinienes-wiedziec-o-hash-map/
-//https://javastart.pl/baza-wiedzy/programowanie-obiektowe/metoda-hashcode
+https://nullpointerexception.pl/pytania-rekrutacyjne-jak-dziala-hashmapa-w-javie/
+https://cupofcodes.pl/co-powinienes-wiedziec-o-hash-map/
+https://javastart.pl/baza-wiedzy/programowanie-obiektowe/metoda-hashcode
+
+Pytania
+Jak działa HashMapa?
+Jest to struktura danych ktora przechowuje dane typu klucz wartosc. W wiekszosci przypadkow pozwala na dodawanie i pobieranie danych o stalym czasie i dziala na zasadzie haszowania.
+Co się dzieje, gdy dwa klucze mają ten sam hascode i czy jest to dopuszczalne?
+Dzieje sie tak zwana kolizja
+Co może być kluczem i jakie warunki musi spełniać klucz mapy?
+Klucz musi implementowac metody hashcode i equals i najlepiej byc immutable
+Dlaczego klucze powinny byc immutable?
+Test: when_we_change_key. Artykul 1.
+Generalnie jak majac jeszcze referencje do klucza ktory przed chwila dodales, zmienia sie rowniez hascode.
+I teraz jak tracisz te referencje, chcac pobrac ten element, trzeba stworzyc jeszcze raz obietk o starym hashcode i pobierasz wterdy null
+Bledne implemantacje equals i hashcode?
+test: bad_equals_hashcode_implementation
+Artykul 3
+
+
+Remember code construction
+Iteration over map
