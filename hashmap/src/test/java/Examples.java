@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.security.Key;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -20,6 +19,7 @@ public class Examples {
         Person personAgain = new Person(1);
         assertNull(mapa.get(personAgain));
     }
+
     @Test
     public void bad_equals_hashcode_implementation() {
         Set<ProductBad> set = new HashSet<>();
@@ -37,7 +37,7 @@ public class Examples {
         ProductBadSecond product2 = new ProductBadSecond("mleko", 3.4);
         set.add(product1);
         set.add(product2); // produkt1 i produkt2 sa rowen wiec powinny trafic do tego samego kubela i zostac nadpisay ale tak sie nie dziaje poniewaz hashciode zwraca rozna wartosc.
-        assertEquals(2, set.size()); //powiiny byc 1
+        assertEquals(2, set.size()); //powinny byc 1
     }
 
     @Test
@@ -45,11 +45,10 @@ public class Examples {
         Map<KeyCollision, String> mapa = new HashMap<>();
         KeyCollision one = new KeyCollision(1);
         KeyCollision two = new KeyCollision(3);
-        mapa.put(one,"Andrzej");
+        mapa.put(one, "Andrzej");
         mapa.put(two, "Mariusz");
         mapa.get(one);
         mapa.get(two);
-
         //assertEquals(2, set.size()); //powinny byc 1
     }
 }
