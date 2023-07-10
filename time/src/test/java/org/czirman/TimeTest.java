@@ -4,6 +4,7 @@ import org.czirman.utils.TimeUtils;
 import org.junit.jupiter.api.Test;
 
 import java.time.*;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -38,4 +39,7 @@ public class TimeTest {
         Boolean open = timeFunctionality.isShopOpen();
         assertFalse(open);
     }
+
+
+
 }
