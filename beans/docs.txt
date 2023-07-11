@@ -1,20 +1,34 @@
-https://www.javappa.com/kurs-spring/wstrzykiwanie-zaleznosci
+https://www.javappa.com/kurs-spring/wstrzykiwanie-zaleznosci - to jest kurs, raczej wyjasniaja pobierzenie
 https://nofluffjobs.com/blog/dependency-injection-w-springu/
+https://www.java4coding.com/contents/spring/spring3.2/spring-bean-annotation - ladne wyjasnienie adnotacji bean i component Autowired
 
 1. Adotacja bean a component
 @Component są używane do automatycznego wykrywania i automatycznej konfiguracji komponentów
 bean za pomocą skanowania ścieżki klas.
 @Bean służy do jawnego zadeklarowania pojedynczej fasoli, zamiast pozwalać Springowi robić to automatycznie
 
-2. W pakiecie skanowanym nie trzeba dodawać adnotacji autowired, robi sie to poza
-patrz konstruktor StateBean.
+2. @Autowired wstrzykiwanie.? Na tej stronie jest to wyjasnione
 
-3. Jak zadeklarujesz fasole adnotacja bean to we wstrzykiwanym konstruktorze kontener sam się zorientuje ze to bean
+3. Bean możemy stosować jak chcemy zrobić z zewnętrznej klasy bean, gdy nie ma możliwości dodania do tej klasy adnotacji component
 
-4. Bean możemy stosować jak chcemy zrobić z zewnętrznej klasy bean, nie ma możliwości dodania tam adnotacji component
+4 W springuBooce jak nie użyjesz skanowania, on chyba skanuje cała aplikacje i znajduje fasolki z adnotacja component
 
-5 W springuBooce jak nie użyjesz skanowania, on chyba skanuje cała aplikacje i znajduje fasolki z adnotacja component
-
-6. How many bean. Nazwametody, name determinuja. Jak zduplikujesz name dla dwóch metod to stworzy jednego beana
+5. How many bean. Nazwametody, name determinuja. Jak zduplikujesz name dla dwóch metod to stworzy jednego beana
 
 
+Strumien swiadomosci
+3.  Chodzi o to ze adnotacja @Bean jest na poziomie metody lub konstruktora. Powinna byc uzywana z adnotacja @Configuration. Ale dziala bez tego
+
+
+DOTO
+spraewdzic w Springbootowaj apikacji czy bez configuration zadzoiala. Ta klasa jest tylko oznaczeniem ze to jest konfiguracje
+https://www.digitalocean.com/community/tutorials/spring-configuration-annotation
+Do sprawdzenie pkt 4
+Do sprawdzenie pkt 5
+Operacyjnie posprawdzac roznice miedzy @Rest a @Contr. Bo reszta to chyba tylko oznacznei
+https://www.codingninjas.com/studio/library/difference-between-controller-and-restcontroller
+https://www.java67.com/2022/06/difference-between-component-service-repository-in-spring.html
+
+
+Co to jest IOC
+Odwrocenie sterowania. Polega ne  przekazani kontroli nad cyklem zycia obiektow kontenrowi
