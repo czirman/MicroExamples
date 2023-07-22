@@ -1,0 +1,2 @@
+https://stormit.pl/klonowanie/#jak-dziala-clone-i-clonable-w-javie
+https://github.com/StormITpl/JavaExamples/blob/master/clones/src/main/java/pl/stormit/clones/UserSerialization.java  - github
