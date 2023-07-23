@@ -1,0 +1,8 @@
+https://coderanch.com/t/492688/java/java-math-BigDecimal-double-float
+
+http://androidcoder.pl/index.php/335/ -PHP android, ale dokładnie jest wyjasniona
+https://www.samouczekprogramisty.pl/liczby-zmiennoprzecinkowe/
+
+--delete to
+80000000000
+799999983616
