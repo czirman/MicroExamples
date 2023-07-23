@@ -12,5 +12,6 @@ public class FromRancheExample {
         System.out.println(bd);
         double d = Double.parseDouble(s);
         System.out.println(d);
+
     }
 }

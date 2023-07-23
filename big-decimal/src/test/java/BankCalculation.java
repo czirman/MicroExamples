@@ -5,23 +5,27 @@ import java.math.BigDecimal;
 public class BankCalculation {
 
     @Test
-    public void using_float() {
+    public void using_double() {
+        //given
         double priceWithoutVat = 9.99;
-
         log("Price without VAT", priceWithoutVat);
-
         double priceWithVat = priceWithoutVat * 1.23;
         log("Price with VAT", priceWithVat);
 
         double valueWithVat = priceWithVat * 10000;
         log("Value with VAT", valueWithVat);
 
-        double priceWithoutVat2 = valueWithVat / 1.23;
-        log("Value without VAT", priceWithoutVat2);
+        double valueWithoutVat2 = valueWithVat / 1.23;
+        log("Value without VAT", valueWithoutVat2);
 
         String priceWithVatRounded = String.format("%.2f", priceWithVat);
         log("Price with VAT", priceWithVatRounded);
+
+        String priceWithVa2 = String.format("%.2f", priceWithVat);
+        log("Price with VAT2", priceWithVa2);
+
         // rzutuje w górą ale czy tak chcemy
+        // ten przyklad bardzo niejasny jest
     }
 
     @Test
