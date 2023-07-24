@@ -12,14 +12,14 @@ public class InterviewRepost {
     public void should_get_five_not_frauded() {
         Fraud fraud = new Fraud();
 
-        List<Integer> report = fraud.getStatusPeople()
+        List<Integer> reportResult = fraud.getStatusPeople()
                 .stream()
-                .filter(report1 -> report1.getFrauded() == false)
-                .map(report1 -> report1.getId())
+                .filter(fraudPeople -> fraudPeople.getFrauded() == false)
+                .map(report -> report.getId())
                 .collect(Collectors.toList());
 
         List<Person> personStream =
-                getSortedFromRepo().filter(person -> report.contains(person.getId()))
+                getSortedFromRepo().filter(person -> reportResult.contains(person.getId()))
                         .limit(5).collect(Collectors.toList());
 
     }
