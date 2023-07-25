@@ -9,7 +9,8 @@ public class StaticField {
     public static final ArrayList<Double> list = new ArrayList<Double>(1000000);
 
     // wyskoczy out of memory z parametrem -Xmx16M
-    @Test
+    // TODO ten test nie dziala bez parmatetru pow, nie ma sensu go razem odpalac
+    //@Test
     public void givenStaticField_whenLotsOfOperations_thenMemoryLeak() throws InterruptedException {
         for (int i = 0; i < 1000000; i++) {
             list.add(random.nextDouble());
