@@ -1,5 +1,4 @@
 import model.Increme;
-import model.Klasa;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,26 +7,24 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class SimpleOperation {
 
     @Test
-    public void how_to_sort_primitive(){
-        Stream.of(3,4,6,8,9,1).sorted().forEach(System.out::println);
+    public void how_to_sort_primitive() {
+        Stream.of(3, 4, 6, 8, 9, 1).sorted().forEach(System.out::println);
     }
 
     @Test
-    // TODO wywala wyjatek zwiazany z jedna z waznych cech strumieni
-    public void test1() {
-
-        Stream<Klasa> stream = Arrays.asList(new Klasa(1), new Klasa(4), new Klasa(2), new Klasa(10), new Klasa(19)).stream();
-        Stream<Object> b = stream.map(arg -> arg.getHup());//.collect(Collectors.toList());
-        b.collect(Collectors.toList());
-
+    public void stream_was_closed() {
         Stream<String> stringStream = Stream.of("A", "B", "C", "D");
         Stream<String> result1 = stringStream.filter(arg -> arg.equals("A"));
 
         result1.collect(Collectors.toList());
-        //result1.findFirst();
+        assertThrows(IllegalStateException.class, () -> {
+            result1.findFirst();
+        }, "stream has already been operated upon or closed");
 
     }
 
@@ -41,18 +38,18 @@ public class SimpleOperation {
     @Test
     public void how_to_extract_asci_code() {
         String all = "AA";
-        all.chars().mapToObj(c -> (char)c).forEach(System.out::println);
+        all.chars().mapToObj(c -> (char) c).forEach(System.out::println);
     }
 
     @Test
     public void how_to_extract_asci_code_steep_by_steep() {
         String all = "AA";
         IntStream stream = all.chars();
-        stream.mapToObj(c -> (char)c).forEach(System.out::println);
+        stream.mapToObj(c -> (char) c).forEach(System.out::println);
     }
 
     @Test
-    public void use_dodot_operator_in_Integer() {
+    public void use_dot_dot_operator_in_Integer() {
         List<String> fruits = Arrays.asList("apple", "banana", "cherry");
         List<Integer> lengths = fruits.stream()
                 .map(String::length)// TODO dlaczego tu length nie musi byc metodą statyczną
@@ -95,13 +92,13 @@ public class SimpleOperation {
 
     @Test
     public void using_double_dot_example() {
-        Integer tab[] = {3,1,5,7,8,9,0,1,4};
+        Integer tab[] = {3, 1, 5, 7, 8, 9, 0, 1, 4};
         Stream<Integer> stream = Stream.of(tab);
         List<Integer> result = stream.map(SimpleOperation::transform).collect(Collectors.toList());
         System.out.println(result);
     }
 
-    static Integer transform(Integer integer){
+    static Integer transform(Integer integer) {
         return ++integer;
     }
 }
