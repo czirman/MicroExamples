@@ -20,4 +20,3 @@ public class StaticField {
         Thread.sleep(10000); // to allow GC do its job
     }
 }
-//https://stackify.com/memory-leaks-java/

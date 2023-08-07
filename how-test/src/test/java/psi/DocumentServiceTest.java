@@ -132,7 +132,6 @@ public class DocumentServiceTest {
 
     }
 
-    //TODO lombok
     private static Document getDocument(Instant deadlineDate) {
         return new Document("content", deadlineDate);
     }
